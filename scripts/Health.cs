@@ -13,10 +13,16 @@ public class Health : MonoBehaviour {
 	public int currentHealth;
 	public void ModifyHealth(int modifyAmount)
 	{
+<<<<<<< HEAD
 		currentHealth += modifyAmount;
 		if (currentHealth < 1) {
 			currentHealth = 0;
 			Application.LoadLevel ("gameover");
+=======
+				currentHealth += modifyAmount;
+				if (currentHealth < 1) {
+						currentHealth = 0;
+>>>>>>> origin/master
 					
 			//player dies code
 		} else if (currentHealth > maxHealth) {
