@@ -17,4 +17,5 @@ public class HUD : MonoBehaviour {
 						GUI.Label (new Rect (5, 25, 120, 20), "Health: " + myHealth.currentHealth + "/" + myHealth.maxHealth);
 				
 	}
+
 }

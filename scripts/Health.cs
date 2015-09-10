@@ -13,15 +13,22 @@ public class Health : MonoBehaviour {
 	public int currentHealth;
 	public void ModifyHealth(int modifyAmount)
 	{
-				currentHealtsbdbdbdbbfdbfdbrfebfbrebcbreh += modifyAmount;
-				if (currentHealth < 1) {
-						currentHealth = 0;
+		currentHealth += modifyAmount;
+		if (currentHealth < 1) {
+			currentHealth = 0;
+			Application.LoadLevel ("gameover");
 					
-						//player dies code
-				} else if (currentHealth > maxHealth) {
-						currentHealth = maxHealth;
-				}
+			//player dies code
+		} else if (currentHealth > maxHealth) {
+			currentHealth = maxHealth;
+			if (currentHealth <= 0) {
+				Application.LoadLevel ("gameover");
+			
+				//player dies code
+			}
 		}
+	}
+
 	void Start()
 	{
 		SetMaxHealth (100);

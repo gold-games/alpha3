@@ -5,7 +5,6 @@ public class Firedmg : MonoBehaviour
 {
 	public GameObject player1;
 		Health myHealth;
-		public float burntic = 1.5f;
 		public int burndamage;
 
 		// Use this for initialization
@@ -13,7 +12,7 @@ public class Firedmg : MonoBehaviour
 		{
 
 		myHealth = player1.GetComponent<Health>();
-		burndamage = Random.Range (5, 20);
+		burndamage = 1;
 		}
 	
 		// Update is called once per frame
@@ -22,18 +21,16 @@ public class Firedmg : MonoBehaviour
 	
 		}
 
-		void OnTriggerStay (Collider other)
-		{
+	void OnCollisionStay2D(Collision2D other) {
+
 		Debug.Log("triggered");
 		if (other.gameObject.CompareTag("Player") == true);
 				{
 			Debug.Log("triggered player");
-						burntic -= Time.deltaTime;
 
-			if (burntic <= 0 && other.gameObject.CompareTag("Player") == true) {
+			if (other.gameObject.CompareTag("Player") == true) {
 				Health eh = (Health)player1.GetComponent("Health");
 				eh.ModifyHealth(burndamage*-1);
-								burntic = 1.5f;
 				Debug.Log("triggered burn");
 						}
 				}
